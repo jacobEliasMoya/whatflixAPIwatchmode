@@ -1,0 +1,290 @@
+// DONT TOUCH
+@mixin flexCol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+// DONT TOUCH
+@mixin flexRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+// DONT TOUCH
+@mixin parralax {
+    background-attachment: fixed;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+// DONT TOUCH
+@mixin fullScreener {
+    height: 100vh;
+    width: 100vw;
+}
+// DONT TOUCH
+@mixin animationInfo{
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    
+}
+// DONT TOUCH
+@mixin absCentered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, rgb(22, 2, 88),black);
+    @include flexCol();
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .circle{
+        @include absCentered();
+        @include animationInfo();
+        animation-name: leftoright;
+        // width: 10rem;
+        // height: 10rem;
+        background: rgba(235, 45, 45, 0.274);
+        z-index:-1;
+        border-radius: 50%;
+        box-shadow: inset 0 0 1rem rgba(107, 107, 107, 0.575);
+        width: 00rem;
+        height: 00rem;
+        transition: all ease 3s;
+        animation-duration: 2.5s;
+        opacity: .5;  
+
+    }
+    .gotopage{
+        position: absolute;
+        bottom: 25;
+        font-size: 2vw;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        &:hover{
+            text-decoration: underline;
+        }
+
+    }
+    h1{
+        @include flexRow();
+        font-size: 4.5vw;
+        font-family: 'Russo One', sans-serif;
+        letter-spacing: .5vw;
+        color: white;
+        text-shadow: .5vw .5vw  rgb(11, 0, 39);
+        margin-bottom: 1rem;
+
+        .playicon{
+            @include flexCol();
+            font-size: 2vw;
+            margin-top: 1vw;
+            margin-left: 1vw;
+            border-radius: 50%;
+            width: 4vw;
+            height: 4vw;
+            transition: all ease .25s;
+            float: right;
+            i{
+                margin-left: 1vw;
+            }
+
+        }
+    }
+    .feature{
+        @include flexCol();
+        .featurework{
+            width:25%;
+        }
+
+    }
+    .flexrow{
+        @include flexRow();
+        justify-content: space-between;
+        width: 50%;
+        margin-bottom:2vw;
+        input{
+            width: 60%;
+            background-color: rgba(151, 164, 240, 0.657);
+            height: 3rem;
+            border-radius: .25vw;
+            color: rgb(27, 0, 27);
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.5vw;
+            user-select: initial;
+            transition: all ease 5s;
+            color: white;
+            &:hover{
+                background-color: white;
+            }
+        }
+        .button{
+            
+            width: 25%;
+            border: none;
+            height: 2.2rem;
+            margin-left: 1vw;
+            font-size: initial;
+            box-shadow: initial;
+            color: white;
+            text-shadow: none;
+            transition: all ease .25s;
+            border:2px solid white;
+            background: rgba(73, 18, 255, 0.26);
+
+            &:hover{
+                cursor: pointer;
+                background: rgb(25, 8, 84);
+
+            }
+
+        }
+        margin-bottom: 3rem;
+
+    }
+    .results{
+        @include flexCol();
+        justify-content:  flex-start;
+        border:2px solid white;
+        max-width: 50%;
+        min-width: 50%;
+        background: rgba(73, 18, 255, 0.26);
+        min-height: 8vh;
+        border-radius: .5vw;
+        transition: all ease .25s;
+        position: relative;
+        text-align: center;
+        height: auto;
+        padding: 1rem;
+        .overlay{
+            @include absCentered();
+            width: 100%;
+            height: inherit;
+            background: red;
+        }
+        &:hover{
+        background: rgba(73, 18, 255, 0.26);
+        }
+        .res{
+            @include flexRow();
+            justify-content: space-between;
+            width: 100%;
+            min-height: inherit;
+
+            border-radius: .25vw;
+            background: rgba(0, 0, 0, 0.274);
+            padding:1rem 1.5rem;
+            .name,.information{
+                @include flexRow();
+                min-width: 25%;
+                min-height: inherit;
+                border-radius: .25rem;
+                *{
+                    color: salmon;
+                }
+                color: salmon;
+            }
+            .information{
+                @include flexCol();
+                justify-content: space-between;
+                min-width: 50%;
+                margin-left: 1rem;
+                font-size: 1.25rem;
+                font-weight: bold;
+                h2{
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    margin: 2rem 0vw;
+                    color: white;
+                    width: 100%;
+                    text-align: left;
+                }
+                a{  
+                    width: 100%;
+                    text-align: left;
+                    transition: all ease .1s;
+                    text-decoration: none;
+                    line-height: 1.5;
+                    &:hover{
+                        text-decoration: underline;
+                        color: white;
+                    }
+                }
+                .feature{
+                    width: 100%;
+                    margin-bottom: 0;
+                    a{
+                        width:100%;
+                        text-align: left !important;
+                    }
+                }
+
+            }    
+
+        }
+    }
+    .selecttype{
+        justify-content: space-between;   
+        .checked{
+            font-size: 1.75vw !important;
+        }
+        h2{
+            background: black;
+            color: white;
+            border-radius: .25vw;
+            padding: .5vw;
+            width: 40%;
+            text-align: center;
+            transition: all ease .25s;
+            border:2px solid white;
+            background: rgba(73, 18, 255, 0.26);
+            .fa-check{
+                transition: all ease .25s;
+                float: right;
+                padding-right: .25rem;
+                color: red;
+                font-size: 0px;
+            }
+            &:hover{
+                cursor: pointer;
+                background: rgb(25, 8, 84);
+            }
+        }
+    }
+}
+
+@keyframes leftoright {
+
+    0%{
+        margin-left: -.5%;
+        
+    }
+    50%{
+        margin-left: .5%;
+        
+    }
+    100%{
+        margin-left: -.5%;
+        
+    }
+
+}
